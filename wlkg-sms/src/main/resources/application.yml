@@ -1,0 +1,18 @@
+server:
+  port: 8095
+spring:
+  application:
+    name: sms-service
+  rabbitmq:
+    host: 10.11.60.234
+    username: wlkg1
+    password: 123456
+    virtual-host: /wlkg1
+
+#    我们首先把一些常量抽取到application.yml中：
+wlkg:
+  sms:
+    accessKeyId: LTAI4FmBfD3fCevp2vHZKbdM   # 你自己的accessKeyId
+    accessKeySecret: DE2MjEFSVw6Ka2ESumCEraCYZPGMSc     # 你自己的AccessKeySecret
+    signName: 窝里快商城     # 签名名称
+    verifyCodeTemplate: SMS_174028375     # 模板名称

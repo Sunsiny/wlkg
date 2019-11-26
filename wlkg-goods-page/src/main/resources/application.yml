@@ -1,0 +1,29 @@
+server:
+  port: 8094
+
+spring:
+  application:
+    name: goods-page
+  thymeleaf:
+    cache: false
+  rabbitmq:           #消息队列 ---这里只是接收消息而不发送，所以不用配置template相关内容
+    host: 10.11.60.234
+    username: wlkg
+    password: 123456
+    virtual-host: /wlkg
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+wlkg:
+  thymeleaf:
+    destPath: E:/window_nginx/nginx-1.8.0/html
+
+  instance:
+    lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
+    lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}.${server.port}
